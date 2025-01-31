@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Card</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="profile-card">
+    <div class="img-con">
+      <img src="motun.JPG" data-testid="profilePicture" class="profile-picture" alt="Profile Picture" />
+    </div>
+    <div class="words">
+      <h1 data-testid="fullName" class="name">Motunrayo Sobowale</h1>
+      <h2 data-testid="jobTitle" class="title">Frontend Developer</h2>
+      <p data-testid="shortBio" class="bio">
+        A Frontend Developer who is interested in creating beautiful and functional user interfaces. Experienced in modern web technologies and committed to writing clean, maintainable code. Always eager to learn and grow in the ever-evolving world of web development.
+      </p>
+    </div>
+    <div class="info">
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Lagos, Nigeria</span>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <span>sobowalemotunrayo07@gmail.com</span>
+      </div>
+    </div>
+    <div class="social-links">
+      <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="www.linkedin.com/in/magrayo/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div data-testid="currentTimeUTC" class="time" id="utc-time"></div>
+  </div>
+  <script>
+    function updateUTCTime() {
+      const timeElement = document.getElementById('utc-time');
+      const now = new Date();
+      const utcTimeString = now.toUTCString();
+      timeElement.textContent = `UTC: ${utcTimeString}`;
+    }
+
+    // Update time immediately and then every second
+    updateUTCTime();
+    setInterval(updateUTCTime, 1000);
+  </script>
+</body>
+</html>
